@@ -90,7 +90,7 @@ jobs:
           restore-keys: ubuntu${{ matrix.ubuntu }}-conan-
       - name: Build
         run: |
-          ./build/builder-gpu.sh /bin/bash -c "make USE_ASAN=${{env.useasan}} build-cpp-with-coverage"
+          ./build/builder_gpu.sh /bin/bash -c "make USE_ASAN=${{env.useasan}} build-cpp-with-coverage"
       - run: |
           zip -r code.zip . -x "./.docker/*"
       - name: Archive code
